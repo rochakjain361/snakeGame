@@ -1,8 +1,6 @@
 const canvas = document.querySelector(".canvas");
 const ctx = canvas.getContext('2d');
 const scale = 10;
-const rows = 30;
-const columns =30;
 var snake;
 var fruit;
 
@@ -10,21 +8,31 @@ var fruit;
     snake = new Snake();
     fruit = new Fruit();
     fruit.picklocation();
-        var a1 = window.setInterval(()=>{
-            ctx.clearRect(0,0,300,300);
-            fruit.draw();
+        var a1 = window.setInterval(() => {
+            ctx.clearRect(0, 0, 300, 300);
             snake.update();
             snake.draw();
-            if(snake.eat(fruit)){
+            fruit.draw();
+            if (snake.eat(fruit)) {
                 fruit.picklocation();
             }
+            var x = snake.checkCollision();
+            if (x === true) {
+                var i = 0;
+                var txt = 'Game Over. Final Score = ' + snake.score;
+                var speed = 100;
 
-            var x =snake.checkCollision();
-            if(x === true){
+                function typeWrite() {
+                    if (i < txt.length) {
+                        document.getElementById("status").innerHTML += txt.charAt(i);
+                        i++;
+                        setTimeout(typeWrite, speed);
+                    }
+                }
+                typeWrite();
                 clearInterval(a1);
-                setup();
             }
-        },150);
+        }, 150 / snake.level);
     window.setInterval(()=>{
         document.getElementById("Score").innerText = "Score:"+snake.score;
         document.getElementById("Level").innerText = "Level:"+snake.level;

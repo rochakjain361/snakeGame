@@ -4,13 +4,85 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
-<canvas class="canvas" height="300" width="300" style="background-color: #3e3e3e"></canvas>
-<div style="display: flex; flex-flow: row; width: 200px;justify-content: space-between">
+<style>
+    body{
+        background: url("snakegamebg.jpg");
+        display: flex;
+        background-size: contain;
+        justify-content: center;
+        align-content: center;
+    }
+    .mainContent{
+        width: 500px;
+        height: 400px;
+        margin-top: 2em;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        padding: 80px 20px 20px;
+    }
+    #Score{
+        color: white;
+        font-size: 20px;
+        font-family: "Kristen ITC";
+    }
+    #Level {
+        color: white;
+        font-size: 20px;
+        font-family: "Kristen ITC";
+    }
+    #head{
+        color: white;
+        font-family: "Kristen ITC";
+    }
+    .heading{
+        height: 100px;
+        width: 540px;
+        background: black;
+        display: flex;
+        justify-content: center;
+    }
+    #status{
+        height: 100px;
+        width: 300px;
+        background: black;
+        display: flex;
+        justify-content: center;
+        color: white;
+        font-family: "Kristen ITC";
+    }
+</style>
+<body><div>
+    <div class = "heading" onplay="typeWriter()">
+        <h1 id = "head"></h1>
+    </div>
+<div class= "mainContent">
+    <div>
+<canvas class="canvas" height="300" width="300" style="background-color: forestgreen"></canvas>
+    <div style="display: flex; flex-flow: row; width: 300px;justify-content: space-between">
     <div id="Score"></div>
     <div id="Level"></div>
+    </div>
+        <div id = "status"></div>
+</div>
+</div>
 </div>
 </body>
+<script>
+    var i = 0;
+    var txt = 'The Snake Game';
+    var speed = 100;
+
+    function typeWriter() {
+        if (i < txt.length) {
+            document.getElementById("head").innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        }
+    }
+    typeWriter();
+</script>
 <script type="text/javascript" src="snake.js"></script>
 <script type="text/javascript" src="snakes.js"></script>
 </html>
