@@ -42,15 +42,16 @@ window.addEventListener('keydown', ((evt)=>{
     const direction = evt.key.replace('Arrow','');
     snake.changeDirection(direction);
 }));
-var moveUp = document.getElementById("3");
-var moveDown = document.getElementById("4");
-var moveLeft = document.getElementById("1");
-var moveRight = document.getElementById("2");
-moveUp.addEventListener("touchstart", myfunction('Up'));
-moveDown.addEventListener("touchstart", myfunction('Down'));
-moveLeft.addEventListener("touchstart", myfunction('Left'));
-moveRight.addEventListener("touchstart", myfunction('Right'));
-function myfunction(direction) {
-    snake.changeDirection(direction);
+document.getElementById("3").onclick = function () {
+    snake.changeDirection('Up');
+}
+document.getElementById("4").onclick = function () {
+    snake.changeDirection('Down');
+}
+document.getElementById("1").onclick = function () {
+    snake.changeDirection('Left');
+}
+document.getElementById("2").onclick = function () {
+    snake.changeDirection('Right');
 }
 
