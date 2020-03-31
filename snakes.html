@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
 </head>
 <style>
@@ -36,6 +36,13 @@
         color: white;
         font-family: "Kristen ITC";
     }
+    #subt{
+        color: white;
+        font-family: "Kristen ITC";
+        display: flex;
+        margin-top: -10px;
+        justify-content: center;
+    }
     .heading{
         height: 100px;
         width: 540px;
@@ -43,8 +50,46 @@
         display: flex;
         justify-content: center;
     }
+    .buttonLeft{
+        margin-left: 200px;
+        position: absolute;
+        margin-top: -25px;
+        height: 50px;
+        width: 50px;
+        background: black;
+    }
+    .buttonRight{
+        margin-left: 300px;
+        margin-top: -25px;
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        background: black;
+        transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+    }
+    .buttonTop{
+        margin-left: 250px;
+        margin-top: -50px;
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        background: black;
+        transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+    }
+    .buttonBottom{
+        margin-left: 250px;
+        margin-top: 0px;
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        background: black;
+        transform: rotate(270deg);
+        -webkit-transform: rotate(270deg);
+    }
     #status{
-        height: 100px;
+        height: 50px;
         width: 300px;
         background: black;
         display: flex;
@@ -52,10 +97,20 @@
         color: white;
         font-family: "Kristen ITC";
     }
+    @media  {
+        
+    }
 </style>
 <body><div>
     <div class = "heading" onplay="typeWriter()">
-        <h1 id = "head"></h1>
+        <div>
+        <div>
+            <h1 id = "head"></h1>
+        </div>
+        <div>
+            <h5 id = "subt">On PC use Arrow - Keys</h5>
+        </div>
+        </div>
     </div>
 <div class= "mainContent">
     <div>
@@ -67,6 +122,20 @@
         <div id = "status"></div>
 </div>
 </div>
+    <div>
+        <div class = "buttonLeft">
+            <img src="arrow-left.png" id = "1" height="50px" width="50px">
+        </div>
+        <div class = "buttonRight">
+            <img src="arrow-left.png" id ="2" height="50px" width="50px">
+        </div>
+        <div class = "buttonTop">
+            <img src="arrow-left.png" id="3" height="50px" width="50px">
+        </div>
+        <div class = "buttonBottom">
+            <img src="arrow-left.png" id="4" height="50px" width="50px">
+        </div>
+    </div>
 </div>
 </body>
 <script>

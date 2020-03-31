@@ -19,7 +19,7 @@ var fruit;
             var x = snake.checkCollision();
             if (x === true) {
                 var i = 0;
-                var txt = 'Game Over. Final Score = ' + snake.score;
+                var txt = 'Game Over. Final Score = ' + snake.score ;
                 var speed = 100;
 
                 function typeWrite() {
@@ -38,8 +38,19 @@ var fruit;
         document.getElementById("Level").innerText = "Level:"+snake.level;
     },50)
 }());
-
 window.addEventListener('keydown', ((evt)=>{
     const direction = evt.key.replace('Arrow','');
     snake.changeDirection(direction);
 }));
+var moveUp = document.getElementById("3");
+var moveDown = document.getElementById("4");
+var moveLeft = document.getElementById("1");
+var moveRight = document.getElementById("2");
+moveUp.addEventListener("touchstart", myfunction('Up'));
+moveDown.addEventListener("touchstart", myfunction('Down'));
+moveLeft.addEventListener("touchstart", myfunction('Left'));
+moveRight.addEventListener("touchstart", myfunction('Right'));
+function myfunction(direction) {
+    snake.changeDirection(direction);
+}
+

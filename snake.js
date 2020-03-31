@@ -129,18 +129,34 @@ function Snake() {
             case 'Up':
                 this.xSpeed = 0;
                 this.ySpeed = -scale;
+                document.getElementById("3").src = 'long-arrow-left.png';
+                document.getElementById("1").src = 'arrow-left.png';
+                document.getElementById("2").src = 'arrow-left.png';
+                document.getElementById("4").src = 'arrow-left.png';
                 break;
             case 'Down':
                 this.xSpeed = 0;
                 this.ySpeed = scale;
+                document.getElementById("4").src = 'long-arrow-left.png';
+                document.getElementById("1").src = 'arrow-left.png';
+                document.getElementById("2").src = 'arrow-left.png';
+                document.getElementById("3").src = 'arrow-left.png';
                 break;
             case 'Left':
                 this.xSpeed = -scale;
                 this.ySpeed = 0;
+                document.getElementById("1").src = 'long-arrow-left.png';
+                document.getElementById("2").src = 'arrow-left.png';
+                document.getElementById("3").src = 'arrow-left.png';
+                document.getElementById("4").src = 'arrow-left.png';
                 break;
             case 'Right':
                 this.xSpeed = scale;
                 this.ySpeed = 0;
+                document.getElementById("2").src = 'long-arrow-left.png';
+                document.getElementById("1").src = 'arrow-left.png';
+                document.getElementById("3").src = 'arrow-left.png';
+                document.getElementById("4").src = 'arrow-left.png';
                 break;
         }
     }
